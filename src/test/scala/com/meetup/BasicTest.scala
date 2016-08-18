@@ -12,16 +12,10 @@ class BasicTest extends FunSpec with MockitoSugar {
 
   describe("Apple checker (basic example)") {
     it("should recognize apples") {
-      val underTest = Basic(mock[ExpensiveOrangeService])
-      assert(underTest.isApple("apple") == true)
-      assert(underTest.isApple("MacIntosh") == true)
-      assert(underTest.isApple("gAla") == true)
+      //todo
     }
     it("should recognize when something is not an apple") {
-      val underTest = Basic(mock[ExpensiveOrangeService])
-      assert(underTest.isApple("pear") == false)
-      assert(underTest.isApple("Bulbasaur") == false)
-      assert(underTest.isApple("Steve Jobs") == false)
+      //todo
     }
   }
 
