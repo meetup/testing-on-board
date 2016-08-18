@@ -2,6 +2,7 @@ package com.meetup
 
 import org.scalatest.mock.MockitoSugar
 import org.scalatest.FunSpec
+import com.meetup.support.ExpensiveOrangeService
 
 /**
  * normally, this file would be authored before/simultaneously with Basic.scala
@@ -11,10 +12,16 @@ class BasicTest extends FunSpec with MockitoSugar {
 
   describe("Apple checker (basic example)") {
     it("should recognize apples") {
-      //todo
+      val underTest = Basic(mock[ExpensiveOrangeService])
+      assert(underTest.isApple("apple") == true)
+      assert(underTest.isApple("MacIntosh") == true)
+      assert(underTest.isApple("gAla") == true)
     }
     it("should recognize when something is not an apple") {
-      //todo
+      val underTest = Basic(mock[ExpensiveOrangeService])
+      assert(underTest.isApple("pear") == false)
+      assert(underTest.isApple("Bulbasaur") == false)
+      assert(underTest.isApple("Steve Jobs") == false)
     }
   }
 
