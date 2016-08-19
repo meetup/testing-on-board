@@ -7,6 +7,8 @@ import com.meetup.support.ExpensiveOrangeService
  * write an example unit test to show the mechanics
  */
 case class Basic(orangeService:ExpensiveOrangeService) {
+
+  /** given a string, tells ya whether that string represents an Apple */
   def isApple(fruit:String):Boolean = fruit.toLowerCase match {
     case "apple" => true
     case "gala" => true
@@ -14,15 +16,25 @@ case class Basic(orangeService:ExpensiveOrangeService) {
     case _ => false
   }
 
+  /** given a string, tells ya whether that string represents an Orange */
   def isOrange(fruit:String):Boolean =
-    if(true) true
+    if(orangeService.estIlUneOrange(fruit)) true // use fancy French service to offload test
     else fruit.toLowerCase match {
       case "orange" => true
       case _ => false
   }
 
-  def isPear(fruit:String):Boolean = ???
+  /** given a string, tells ya whether that string represents a Pear */
+  def isPear(fruit:String):Boolean = complicatedPearAlgorithm(fruit)
+      .orElse( if (fruit == "pear") Some("pear") else None )
+      .isDefined
 
   //returns normalized Pear string, otherwise None, if not recognized
-  private[meetup] def complicatedPearAlgorithm(pearCandidate:String):Option[String] = ???
+  // notice, making something package-private makes it testable (if test is in same package)
+  // while controlling access
+  private[meetup] def complicatedPearAlgorithm(pearCandidate:String):Option[String] =
+    if(pearCandidate.startsWith("p"))
+      Some(pearCandidate)
+    else
+      None
 }
