@@ -2,7 +2,6 @@ package com.meetup
 
 import org.scalatest.mock.MockitoSugar
 import org.scalatest.FunSpec
-import com.meetup.support.ExpensiveOrangeService
 
 /**
  * normally, this file would be authored before/simultaneously with Basic.scala

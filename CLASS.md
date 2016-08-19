@@ -77,6 +77,17 @@ Since, by the time we've written spiedObject.getSomethingString(), we've already
 */
 ```
 
+## Practice
+
+For practice, and because you should create a test for it it since it's not tested above, write a test for complicatedPearAlgorithm()
+* block to write this in: "describe("Complicated algorithm (package private example)") {"
+
+## Testing a Java Class
+
+Guess what, it's just not different. To prove it to you:
+* read BasicJava.java
+* copy the solution to isApple() tests from BasicTest.scala over to BasicJavaTest.scala, replace uses of "Basic" with "new BasicJava()" and confirm it still works
+* do the same thing for the rest of the tests in BasicTest -> BasicJavaTest; and now implement BasicJava.java until all tests pass
 
 # Refactoring - Unit Testing
 
