@@ -8,6 +8,13 @@ import java.util.Properties;
  */
 public class SolutionCrappy {
 
+    //Solution to Requirement 1 was inlined here
+    protected String solution1(String s, boolean currentC, long currentTs, Properties currentProperties) {
+        //Solution to Requirement 2 is externalizing the inline java code into the external Scala code
+        // and just testing that instead of this class
+        return new SolutionCrappySupport().myMethod(s, currentC, currentTs, currentProperties);
+    }
+
     static Properties junkProperties = null;
 
     static {
