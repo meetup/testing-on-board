@@ -42,7 +42,7 @@ The way you run the test is like this, at the root of the project:
 sbt test-only com.meetup.BasicTest
 
 # to run all unit tests in this project:
-sbt test 
+sbt test
 ```
 
 ## First Unit Test
@@ -92,8 +92,9 @@ Guess what, it's just not different. To prove it to you:
 # Refactoring - Unit Testing
 
 Now let's refactor an old class into something less crappy.
+
 1. Take a look at Crappy.java
-2. Note these problems
+2. Note these problems:
   1. file is 1000+ lines of code. a single method has 500+ lines of code. classic blob anti-pattern
   2. static initializer hits db to "configure" an application. 3 dumb ideas for the price of 1!
   3. nothing injected. "new" keyword makes things hard to test and ties code to a specific implementation
@@ -104,3 +105,21 @@ Now let's refactor an old class into something less crappy.
     no understanding by the 30 people you asked, you can run the code multiple times & it is NOT deterministic,
     there are no existing tests, and oh, people think engineering has been going too
     slowly, so you need it done by EOD
+
+
+Let's solve one problem at a time.
+
+Specification:
+Write code starting on line L678 that takes
+
+1. null-able String value of variable "string"
+2. current boolean value of static variable "c"
+
+Then, it sets the value of "ipsum" to the value of the database-loaded value of property properties.get(the string loaded during step 1) otherwise set it to "the current timestamp is: {the current timestamp}"
+OR, if "c" is false, also return the timestamp message
+
+Your requirements:
+
+1. create a method that fulfills the spec and make sure it's tested in CrappyTest.scala (see "Requirement 1")
+2. get rid of that annoying database println message every time you try to test your change
+3. test existing method...

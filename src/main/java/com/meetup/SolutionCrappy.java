@@ -6,7 +6,7 @@ import java.util.Properties;
  * This is meant to represent a previously-untested crappy class with
  * some specific anti-patterns and testability challenges
  */
-public class Crappy {
+public class SolutionCrappy {
 
     static Properties junkProperties = null;
 
@@ -25,6 +25,12 @@ public class Crappy {
     }
 
     public boolean veryImportantCodeThatPeopleAreScaredToChange(String architecto) {
+
+        String s = null;
+
+        String ipsum = null;
+
+        ipsum = new SolutionCrappySupport().myMethod(s, c, System.currentTimeMillis(), junkProperties);
 
         return ut(architecto);
     }
@@ -46,7 +52,7 @@ public class Crappy {
 
     //this may or may not start the database
     static void startDatabase() {
-        System.out.println("this simulates the starting of production");
+        System.out.println("THIS SIMULATES THE STARTING OF THE DATABASE (DO NOT DELETE THIS LINE!!)");
         Properties junkProperties = new Properties();
         junkProperties.setProperty("test1","lorem");
         junkProperties.setProperty("test2","lorem-production");
