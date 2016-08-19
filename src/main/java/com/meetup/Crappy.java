@@ -6,4 +6,23 @@ package com.meetup;
  */
 public class Crappy {
 
+
+    /**
+     * cause trouble and havoc
+     */
+    public static class CrappyInput {
+        boolean junk;
+
+        public CrappyInput(boolean junk, String junk2, char junk3) {
+            this.junk = junk;
+        }
+
+        final String noReasonForFinalizingThis() {
+            return "crap";
+        }
+        boolean isJunk() {
+            return junk;
+        }
+    }
+
 }

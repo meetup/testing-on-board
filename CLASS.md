@@ -91,4 +91,16 @@ Guess what, it's just not different. To prove it to you:
 
 # Refactoring - Unit Testing
 
-
+Now let's refactor an old class into something less crappy.
+1. Take a look at Crappy.java
+2. Note these problems
+  1. file is 1000+ lines of code. a single method has 500+ lines of code. classic blob anti-pattern
+  2. static initializer hits db to "configure" an application. 3 dumb ideas for the price of 1!
+  3. nothing injected. "new" keyword makes things hard to test and ties code to a specific implementation
+  4. some methods depends on object with final members, so hard to mock inputs
+  5. it is not well written or really comprehensible
+  6. what's worse... you've been asked to add some functionality the depends on the value of "ipsum" on L678,
+    without "breaking" the code that has no javadoc, no wiki documentation, no specification,
+    no understanding by the 30 people you asked, you can run the code multiple times & it is NOT deterministic,
+    there are no existing tests, and oh, people think engineering has been going too
+    slowly, so you need it done by EOD
