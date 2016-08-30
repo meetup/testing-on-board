@@ -89,9 +89,11 @@ Guess what, it's just not different. To prove it to you:
 * copy the solution to isApple() tests from BasicTest.scala over to BasicJavaTest.scala, replace uses of "Basic" with "new BasicJava()" and confirm it still works
 * do the same thing for the rest of the tests in BasicTest -> BasicJavaTest; and now implement BasicJava.java until all tests pass
 
-# Refactoring - Unit Testing
+# Surgical Refactoring - Unit Testing
 
 Now let's refactor an old class into something less crappy.
+
+Disclaimer: Surgical Refactoring is dirty refactoring for dirty code. Techniques in this sort of refactoring can support a more orderly refactoring effort (which might include investigation, product definition, architect, review, incremental/staged fixing, and other concepts not covered in this tutorial on testing mechanics)
 
 1. Take a look at Crappy.java
 2. Note these problems:
@@ -134,3 +136,7 @@ methodWithFinalInput whose body can absolutely not be refactored. It takes param
 the body methodWithInconvienentNew contains a new statement, which has undesirable side-effects that we don't want in a testing scenario (such as hitting an API where we pay for each hit).
 
 1. refactor methodWithInconvienentNew to confirm that command "command-to-run-important-things" gets called, without actually hitting the service class InconvenientService
+
+# Component testing
+
+TBD
