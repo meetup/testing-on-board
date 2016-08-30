@@ -109,7 +109,7 @@ Now let's refactor an old class into something less crappy.
 
 Let's solve one problem at a time.
 
-Specification:
+## Specification 1
 Write code starting on line L678 that takes
 
 1. null-able String value of variable "string"
@@ -118,8 +118,19 @@ Write code starting on line L678 that takes
 Then, it sets the value of "ipsum" to the value of the database-loaded value of property properties.get(the string loaded during step 1) otherwise set it to "the current timestamp is: {the current timestamp}"
 OR, if "c" is false, also return the timestamp message
 
+What is "c"? Why set "ipsum" to something? No one you ask gives you an answer that you can understand, so you really shouldn't implement this, but you're new to the job and your Lead assures you that the requirements are absolutely correct and has done the due diligence to make sure that is true. You are welcome to escalate the problem, but your company will go out-of-business tomorrow if you don't do this.
+
 Your requirements:
 
 1. create a method that fulfills the spec and make sure it's tested in CrappyTest.scala (see "Requirement 1")
 2. get rid of that annoying database println message every time you try to test your change
-3. test existing method...
+
+## Specification 2
+methodWithFinalInput whose body can absolutely not be refactored. It takes parameter CrappyInput, which is a final class.
+1. Test methodWithFinalInput() without refactoring it
+2. Get rid of that annoying database message, if you haven't already
+
+## Specification 3
+the body methodWithInconvienentNew contains a new statement, which has undesirable side-effects that we don't want in a testing scenario (such as hitting an API where we pay for each hit).
+
+1. refactor methodWithInconvienentNew to confirm that command "command-to-run-important-things" gets called, without actually hitting the service class InconvenientService
