@@ -817,7 +817,7 @@ public class Crappy {
     /**
      * pretend this class is in another package that you can't refactor
      */
-    static class InconvenientService {
+    public static class InconvenientService {
         InconvenientService() {
             System.out.println(String.format("SIDE-AFFECT YOU WANT TO AVOID IN TESTING BUT NEEDED AT RUNTIME, in class %s", InconvenientService.class));
         }

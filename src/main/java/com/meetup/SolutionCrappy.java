@@ -829,7 +829,7 @@ public class SolutionCrappy {
     /**
      * pretend this class is in another package that you can't refactor
      */
-    static class InconvenientService {
+    public static class InconvenientService {
         InconvenientService() {
             System.out.println(String.format("SIDE-EFFECT HITTING PAY-API, YOU WERE JUST CHARGED $10, in class %s", InconvenientService.class));
         }
