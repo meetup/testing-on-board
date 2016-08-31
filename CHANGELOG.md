@@ -3,4 +3,7 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 
-However, no versioning scheme has been established yet, as this project is still in a kind of PoC state. So this change log is not yet in operation. Feel free to start.
+## [1.x] - 2016-08
+### Added
+- original project files including markdown, scala/java source, build.sbt, license, code of conduct, readme
+- original class found as CLASS.md and covering unit tests in Scala
