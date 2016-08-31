@@ -10,6 +10,8 @@ import java.util.Properties;
  */
 public class SolutionCrappy {
 
+    //btw, notice removal of private method unusedANDConfusing()
+
     //Solution to Specification 1:Requirement 1 was inlined here
     protected String solution1(String s, boolean currentC, long currentTs, Properties currentProperties) {
         //Solution to Specification 1:Requirement 2 is externalizing the inline java code into the external Scala code
